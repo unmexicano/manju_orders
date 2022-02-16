@@ -55,36 +55,11 @@ def register(request):
 
 def manjus(request):
     if request.user.is_authenticated:
-        return render(request, "orders/manjus.html", context = {"manjus":manjus.objects.all, })
-    else:
-        return redirect("orders:login")
-
-def pasta(request):
-    if request.user.is_authenticated:
-        return render(request, "orders/pasta.html", context = {"dishes":Pasta.objects.all})
+        return render(request, "orders/manjus.html", context = {"manjus":manjus })
     else:
         return redirect("orders:login")
 
 
-def salad(request):
-    if request.user.is_authenticated:
-        return render(request, "orders/salad.html", context = {"dishes":Salad.objects.all})
-    else:
-        return redirect("orders:login")
-
-
-def subs(request):
-    if request.user.is_authenticated:
-        return render(request, "orders/sub.html", context = {"dishes":Sub.objects.all})
-    else:
-        return redirect("orders:login")
-
-
-def dinner_platters(request):
-    if request.user.is_authenticated:
-        return render(request, "orders/dinner_platters.html", context = {"dishes":DinnerPlatters.objects.all})
-    else:
-        return redirect("orders:login")
 
 def directions(request):
     if request.user.is_authenticated:

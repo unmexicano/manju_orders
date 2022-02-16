@@ -21,7 +21,7 @@ class manjus(models.Model):
 
     def __str__(self):
         #overriding the string method to get a good representation of it in string format
-        return f"Regular Pizza : {self.pizza_choice}"
+        return f"Regular Pizza : {self.Sabor}"
 
 
 class UserOrder(models.Model):

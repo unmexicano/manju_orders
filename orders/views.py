@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 def index(request):
     if request.user.is_authenticated:
         #we are passing in the data from the category model
-        return render(request, "orders/home.html", {"categories":categoria.objects.all})
+        return render(request, "orders/home.html", {"categoria":categoria.objects.all})
     else:
         return redirect("orders:login")
 

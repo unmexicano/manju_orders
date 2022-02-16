@@ -1,1 +1,1 @@
-web: gunicorn pizza.wsgi --chdir=pizza --log-file -
+web: gunicorn pizza.wsgi

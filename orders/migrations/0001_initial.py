@@ -12,11 +12,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='categorias',
+            name='categoria',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('category_title', models.CharField(max_length=200)),
-                ('category_gif', models.CharField(max_length=200)),
+                ('category_png', models.CharField(max_length=200)),
                 ('category_description', models.TextField()),
             ],
         ),

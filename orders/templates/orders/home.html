@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container-fluid">
       <div class="row justify-content-center">
-        {% for cat in Category %}
+        {% for cat in categorias %}
           <div class="card" style="width: 18rem; margin: 20px;"> <!-- The col-sm-4 stuff is that if its on a small screen it will take up a third of the widths-->
             <img src={{cat.category_png}} class="card-img-top" alt="gif for category item" style="width:100%;">
             <div class="card-body">

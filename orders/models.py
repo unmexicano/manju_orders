@@ -12,7 +12,7 @@ class categoria(models.Model):
         #overriding the string method to get a good representation of it in string format
         return f"{self.category_title}"
 
-class Manjus(models.Model):
+class manjus(models.Model):
     #example row :: 1 topping , 5.00 , 7.00
     Sabor = models.CharField(max_length=200)
     individual = models.DecimalField(max_digits=6, decimal_places=2)

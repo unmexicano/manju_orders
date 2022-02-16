@@ -1,6 +1,7 @@
 Django
-django-tinymce4-lite==1.7.5
+django-tinymce4-lite
 jsmin==2.2.2
 pytz==2019.3
 sqlparse==0.3.0
+django-rest-framework-jwt
 gunicorn

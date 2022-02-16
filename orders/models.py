@@ -6,7 +6,7 @@ from datetime import datetime
 class Category(models.Model):
     category_title = models.CharField(max_length=200)
     category_gif = models.CharField(max_length=200)
-    category_description = models.TextField() #make this the wysiwyg text field
+    category_description = models.TextField(default='descripcion') #make this the wysiwyg text field
 
     def __str__(self):
         #overriding the string method to get a good representation of it in string format
@@ -17,7 +17,7 @@ class manjus(models.Model):
     Sabor = models.CharField(max_length=200)
     individual = models.DecimalField(max_digits=6, decimal_places=2)
     cajita = models.DecimalField(max_digits=6, decimal_places=2)
-    category_description = models.TextField() #make this the wysiwyg text field
+    category_description = models.TextField(default='descripcion manjus') #make this the wysiwyg text field
 
     def __str__(self):
         #overriding the string method to get a good representation of it in string format
@@ -37,7 +37,7 @@ class UserOrder(models.Model):
 
 class SavedCarts(models.Model):
     username = models.CharField(max_length=200, primary_key=True)
-    cart = models.TextField() #this will be a string representation of the cart from localStorage
+    cart = models.TextField(default='descripcion') #this will be a string representation of the cart from localStorage
 
     def __str__(self):
         #overriding the string method to get a good representation of it in string format

@@ -14,7 +14,7 @@ class manjusdmin(admin.ModelAdmin):
             }
 
 
-admin.site.register(categoria,CategoryAdmin)
+admin.site.register(categoria,categoriaAdmin)
 admin.site.register(manjus, manjusAdmin)
 admin.site.register(UserOrder)
 admin.site.register(SavedCarts)

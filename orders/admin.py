@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import manjus, categoria, UserOrder, SavedCarts
+from .models import manjus, Category, UserOrder, SavedCarts
 from tinymce.widgets import TinyMCE
 from django.db import models
 
@@ -14,7 +14,7 @@ class manjusAdmin(admin.ModelAdmin):
             }
 
 
-admin.site.register(categoria,categoriaAdmin)
+admin.site.register(Category, categoriaAdmin)
 admin.site.register(manjus, manjusAdmin)
 admin.site.register(UserOrder)
 admin.site.register(SavedCarts)

@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
-from .models import manjus, categoria, UserOrder, SavedCarts
+from .models import manjus, Category, UserOrder, SavedCarts
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import logout, authenticate, login
@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 def index(request):
     if request.user.is_authenticated:
         #we are passing in the data from the category model
-        return render(request, "orders/home.html", {"categoria":categoria.objects.all})
+        return render(request, "orders/home.html", {"Category":Category.objects.all})
     else:
         return redirect("orders:login")
 
@@ -55,7 +55,7 @@ def register(request):
 
 def pizza(request):
     if request.user.is_authenticated:
-        return render(request, "orders/pizza.html", context = {"regular_pizza":RegularPizza.objects.all, "sicillian_pizza":SicilianPizza.objects.all , "toppings":Toppings.objects.all, "number_of_toppings":[1,2,3]})
+        return render(request, "orders/manjus.html", context = {"regular_pizza":RegularPizza.objects.all, "sicillian_pizza":SicilianPizza.objects.all , "toppings":Toppings.objects.all, "number_of_toppings":[1,2,3]})
     else:
         return redirect("orders:login")
 

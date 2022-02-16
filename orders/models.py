@@ -3,7 +3,7 @@ from datetime import datetime
 
 # Create your models here.
 
-class categoria(models.Model):
+class Category(models.Model):
     category_title = models.CharField(max_length=200)
     category_gif = models.CharField(max_length=200)
     category_description = models.TextField() #make this the wysiwyg text field

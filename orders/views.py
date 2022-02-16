@@ -53,9 +53,9 @@ def register(request):
                   template_name = "orders/register.html",
                   context={"form":UserCreationForm})
 
-def pizza(request):
+def manjus(request):
     if request.user.is_authenticated:
-        return render(request, "orders/manjus.html", context = {"regular_pizza":RegularPizza.objects.all, "sicillian_pizza":SicilianPizza.objects.all , "toppings":Toppings.objects.all, "number_of_toppings":[1,2,3]})
+        return render(request, "orders/manjus.html", context = {"manjus":manjus.objects.all, })
     else:
         return redirect("orders:login")
 

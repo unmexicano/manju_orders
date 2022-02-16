@@ -5,7 +5,7 @@ from datetime import datetime
 
 class Category(models.Model):
     category_title = models.CharField(max_length=200)
-    category_gif = models.CharField(max_length=200)
+    category_png = models.CharField(max_length=200)
     category_description = models.TextField(default='descripcion') #make this the wysiwyg text field
 
     def __str__(self):
@@ -14,7 +14,7 @@ class Category(models.Model):
 
 class manjus(models.Model):
     #example row :: 1 topping , 5.00 , 7.00
-    Sabor = models.CharField(max_length=200)
+    sabor = models.CharField(max_length=200)
     individual = models.DecimalField(max_digits=6, decimal_places=2)
     cajita = models.DecimalField(max_digits=6, decimal_places=2)
     category_description = models.TextField(default='descripcion manjus') #make this the wysiwyg text field

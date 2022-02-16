@@ -8,7 +8,7 @@ class categoriaAdmin(admin.ModelAdmin):
             models.TextField: {'widget': TinyMCE()},
             }
 
-class manjusdmin(admin.ModelAdmin):
+class manjusAdmin(admin.ModelAdmin):
     formfield_overrides = {
             models.TextField: {'widget': TinyMCE()},
             }

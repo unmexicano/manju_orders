@@ -12,16 +12,16 @@ class Category(models.Model):
         #overriding the string method to get a good representation of it in string format
         return f"{self.category_title}"
 
-class manjus(models.Model):
+class opciones(models.Model):
     #example row :: 1 topping , 5.00 , 7.00
-    sabor = models.CharField(max_length=200)
-    individual = models.DecimalField(max_digits=6, decimal_places=2)
-    cajita = models.DecimalField(max_digits=6, decimal_places=2)
+    relleno = models.CharField(max_length=200)
+    small_price = models.DecimalField(max_digits=6, decimal_places=2)
+    large_price = models.DecimalField(max_digits=6, decimal_places=2)
     category_description = models.TextField(default='descripcion manjus') #make this the wysiwyg text field
 
     def __str__(self):
         #overriding the string method to get a good representation of it in string format
-        return f"Regular Pizza : {self.sabor}"
+        return f"sabor : {self.relleno}"
 
 
 class UserOrder(models.Model):

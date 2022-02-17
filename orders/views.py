@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
-from .models import manjus, Category, UserOrder, SavedCarts
+from .models import opciones, Category, UserOrder, SavedCarts
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import logout, authenticate, login
@@ -55,7 +55,7 @@ def register(request):
 
 def manjus(request):
     if request.user.is_authenticated:
-        return render(request, "orders/manjus.html", context = {"manjus":manjus })
+        return render(request, "orders/manjus.html", context = {"dishes":manjus.opciones.all})
     else:
         return redirect("orders:login")
 

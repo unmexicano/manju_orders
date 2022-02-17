@@ -1,17 +1,18 @@
 from django.contrib import admin
 from .models import opciones, Category, UserOrder, SavedCarts
-from tinymce.widgets import TinyMCE
+from tinymce import models as tinymce_models
 from django.db import models
+
 
 class categoriaAdmin(admin.ModelAdmin):
     formfield_overrides = {
-            models.TextField: {'widget': TinyMCE()},
-            }
+                              tinymce_models.HTMLField()},
+
 
 class opcionesAdmin(admin.ModelAdmin):
     formfield_overrides = {
-            models.TextField: {'widget': TinyMCE()},
-            }
+                               tinymce_models.HTMLField()},
+
 
 
 admin.site.register(Category, categoriaAdmin)

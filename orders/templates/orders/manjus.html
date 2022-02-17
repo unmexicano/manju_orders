@@ -12,10 +12,10 @@
   <h4 style="margin:10px; text-align:center;"> Elige uno de nuestros manjus</h4>
   <div class="row justify-content-center">
 
-    {% for manjus in dishes %}
+    {% for sabor in manjus %}
     <div class="card" id="regular_pizza_card" style="width: 24rem; margin:10px;">
       <div class="card-body">
-        <h5 class="card-title" >{{manjus.dish_name}}</h5>
+        <h5 class="card-title" >{{manjus.sabor}}</h5>
       </div>
       <button class="btn btn-success" onclick="add_to_cart({item_description:'{{manjus.dish_name}}' , price:{{manjus.price}} })">£{{manjus.price}}</button>
     </div>

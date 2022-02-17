@@ -55,7 +55,7 @@ def register(request):
 
 def manjus(request):
     if request.user.is_authenticated:
-        return render(request, "orders/manjus.html", context = {"dishes":manjus.opciones.all})
+        return render(request, "orders/manjus.html", context = {"dishes":opciones.objects.all})
     else:
         return redirect("orders:login")
 

@@ -113,7 +113,7 @@ function display_notif(type, info="No info provided"){
   }
   switch (type){
     case "add to cart":
-      toastr.success(info.item_description + ': £' + info.price, 'Added to Cart');
+      toastr.success(info.item_description + ': $' + info.price, 'Added to Cart');
       break;
     case "remove from cart":
       toastr.warning("Successfully removed "+info+ " from cart");
@@ -128,7 +128,7 @@ function display_notif(type, info="No info provided"){
 function load_cart(){
   var table = document.getElementById('cart_body');
   table.innerHTML = ""; //clear the table
-  document.getElementById('cart_heading').innerHTML = "To remove an item from cart, simply click it..."
+  document.getElementById('cart_heading').innerHTML = "Para eliminar algo del carrito solo dale click"
   var cart = JSON.parse(localStorage.getItem("cart"));
   var total = 0;
   if (cart !== null && cart.length > 0){
@@ -140,13 +140,13 @@ function load_cart(){
       var item_price = row.insertCell(2);
       item_number.innerHTML = String(i+1);
       item_description.innerHTML = cart[i].item_description;
-      item_price.innerHTML = "£"+cart[i].price;
+      item_price.innerHTML = "$"+cart[i].price;
 
       total += cart[i].price
     }
     total = Math.round(total * 100) / 100
     localStorage.setItem('total_price', total);
-    document.getElementById('total').innerHTML = "£"+localStorage.getItem("total_price")
+    document.getElementById('total').innerHTML = "$"+localStorage.getItem("total_price")
 
 
     onRowClick("cart_body", function (row){

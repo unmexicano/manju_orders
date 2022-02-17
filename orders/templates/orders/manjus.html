@@ -8,23 +8,31 @@
 
 <div class="container">
 
+  <h4 style="margin:10px; text-align:center;"> Elige uno de nuestros manjus&#x1f956 </h4>
 
-  <h4 style="margin:10px; text-align:center;"> Elige uno de nuestros manjus </h4>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center" >
 
-    {% for dish in dishes %}
-    <div class="card" id="regular_pizza_card" style="width: 24rem; margin:10px;">
-      <div class="card-body">
-        <h5 class="card-title" >{{dish}}</h5>
-      </div>
-      <button class="btn btn-primary" onclick="add_to_cart({item_description:'{{dish}}' , price:{{dish.price}} })">£{{dish.price}}</button>
-    </div>
-    {% endfor %}
-
+    <table class="table"  style="border: 2px solid black">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">relleno</th>
+        <th scope="col">individual</th>
+        <th scope="col">para compartir</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for dish in dishes %}
+      <tr>
+        <th>{{dish.relleno}}</th>
+        <td><button type="button" class="btn btn-primary" onclick="add_to_cart({item_description:'individual- {{dish.relleno}}' , price:{{dish.small_price}} })"><strong>{{dish.small_price}}</strong></button></td>
+        <td><button type="button" class="btn btn-success" onclick="add_to_cart({item_description:'para compartir - {{dish.relleno}}' , price:{{dish.large_price}} })"><strong>{{dish.large_price}}</strong></button></td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
 
   </div>
 
 </div>
-
 
 {% endblock %}
